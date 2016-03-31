@@ -2,15 +2,13 @@ package ua.in.dergachovda.less04;
 
 import java.util.Scanner;
 
-public class DecToBin {
+public class Factorial {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
-        String bin = "";
-        while (n > 0) {
-            bin = (n % 2) + bin;
-            n /= 2;
-        }
-        System.out.println(bin);
+        int result = 1;
+        for (int i = 1; i <= n; i++)
+            result *= i;
+        System.out.println(n + "! = " + result);
     }
 }
