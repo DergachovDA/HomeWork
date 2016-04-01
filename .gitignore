@@ -1,4 +1,5 @@
 *.iml
+*.txt
 *.png
 out/
 .idea/

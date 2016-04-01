@@ -5,7 +5,7 @@ package ua.in.dergachovda.less04;
 public class HappyTicket {
     public static void main(String[] args) {
 
-        for (int i = 100000; i < 1000000; i++){
+        for (int i = 100000; i < 1000000; i++) {
             int iLeft = i / 1000;
             int iRight = i % 1000;
             if (sumOfNumerals(iLeft) == sumOfNumerals(iRight))
