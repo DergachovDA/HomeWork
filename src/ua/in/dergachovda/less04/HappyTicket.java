@@ -3,8 +3,8 @@ package ua.in.dergachovda.less04;
 //8. Найти все счастливые билеты от 100000 до 999999
 
 public class HappyTicket {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         for (int i = 100000; i < 1000000; i++) {
             int iLeft = i / 1000;
             int iRight = i % 1000;
