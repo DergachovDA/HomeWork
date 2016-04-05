@@ -24,8 +24,8 @@ public class SortArray {
                     int temp = a[i];
                     a[i] = a[j];
                     a[j] = temp;
+                    operation++;
                 }
-                operation++;
             }
         }
 
@@ -38,7 +38,6 @@ public class SortArray {
     }
 
     public static int[] selectionSort(int[] a) {
-
         int operation = 0;
         long start = System.nanoTime();
 

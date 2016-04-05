@@ -24,7 +24,7 @@ public class MergerArray {
         int index_a = 0;
         int index_b = 0;
         for (int i = 0; i < resultArray.length; i++) {
-            if (index_a < a.length & index_b < b.length) {
+            if (index_a < a.length && index_b < b.length) {
                 if (a[index_a] < b[index_b]) {
                     resultArray[i] = a[index_a];
                     index_a++;
