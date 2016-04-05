@@ -14,11 +14,11 @@ public class SortArray {
         Utils.printArray(selectionSort(selectionSortArray));
     }
 
-    private static int[] sort(int[] a) {
+    public static int[] sort(int[] a) {
         int operation = 0;
         long start = System.nanoTime();
 
-        for (int i = 0; i < a.length; i++){
+        for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
                 if (a[i] > a[j]) {
                     int temp = a[i];
@@ -37,7 +37,7 @@ public class SortArray {
         return a;
     }
 
-    private static int[] selectionSort(int[] a) {
+    public static int[] selectionSort(int[] a) {
 
         int operation = 0;
         long start = System.nanoTime();
