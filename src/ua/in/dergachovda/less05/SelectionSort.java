@@ -47,12 +47,11 @@ public class SelectionSort {
                     operation++;
                 }
             }
-            if (i != indexMin) {
-                int temp = a[i];
-                a[i] = a[indexMin];
-                a[indexMin] = temp;
-                operation++;
-            }
+            int temp = a[i];
+            a[i] = a[indexMin];
+            a[indexMin] = temp;
+            operation++;
+
         }
 
         long end = System.nanoTime();

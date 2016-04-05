@@ -13,4 +13,17 @@ public class Utils {
         System.out.println("}");
     }
 
+    public static int[] arraySort(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            int indexMin = i;
+            for (int j = i + 1; j < a.length; j++)
+                if (a[j] < a[indexMin])
+                    indexMin = j;
+            int temp = a[i];
+            a[i] = a[indexMin];
+            a[indexMin] = temp;
+        }
+        return a;
+    }
+
 }
