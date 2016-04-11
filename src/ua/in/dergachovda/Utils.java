@@ -12,6 +12,17 @@ public class Utils {
         }
         System.out.println("}");
     }
+	
+	public static void printArray2(int[][] array) {
+		
+		for (int x = 0; x < array.length; x++) {
+			for (int y = 0; y < array[x].length; y++) {
+				System.out.print(array[x][y] + "\t");
+			}
+			System.out.print("\n\n");
+		}
+		
+	}
 
     public static int[] arraySort(int[] a) {
         for (int i = 0; i < a.length; i++) {
