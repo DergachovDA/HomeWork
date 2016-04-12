@@ -9,12 +9,8 @@ public class PascalTriangle {
 
         for (int i = 0; i < t.length; i++) {
             t[i] = new int[i + 1];
-            for (int j = 0; j < t[i].length; j++) {
-                if (i == 0)
-                    t[i][j] = 1;
-                else
-                    t[i][j] = getL(t, i, j) + getR(t, i, j);
-            }
+            for (int j = 0; j < t[i].length; j++)
+                t[i][j] = getNext(t, i, j);
         }
         printTriangle(t);
     }
@@ -29,22 +25,25 @@ public class PascalTriangle {
         }
     }
 
-    public static int getL(int[][] t, int i, int j) {
-        int result;
-        if (j == 0)
-            result = 0;
-        else
-            result = t[i - 1][j - 1];
+    public static int getNext(int[][] t, int i, int j) {
+        int left, right, result;
+
+        if (i == 0)
+            result = 1;
+        else {
+            if (j == 0)
+                left = 0;
+            else
+                left = t[i - 1][j - 1];
+
+            if (j < t[i - 1].length)
+                right = t[i - 1][j];
+            else
+                right = 0;
+
+            result = left + right;
+        }
+
         return result;
     }
-
-    public static int getR(int[][] t, int i, int j) {
-        int result;
-        if (j < t[i - 1].length)
-            result = t[i - 1][j];
-        else
-            result = 0;
-        return result;
-    }
-
 }
