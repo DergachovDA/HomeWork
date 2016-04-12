@@ -13,7 +13,7 @@ public class PascalTriangle {
                 if (i == 0)
                     t[i][j] = 1;
                 else
-                    t[i][j] = (j == 0 ? 0 : t[i - 1][j - 1]) + (j >= t[i - 1].length ? 0 : t[i - 1][j]);
+                    t[i][j] = getL(t, i, j) + getR(t, i, j);
             }
         }
         printTriangle(t);
@@ -27,6 +27,24 @@ public class PascalTriangle {
                 System.out.print(array[i][j] + "\t\t");
             System.out.print("\n\n");
         }
+    }
+
+    public static int getL(int[][] t, int i, int j) {
+        int result;
+        if (j == 0)
+            result = 0;
+        else
+            result = t[i - 1][j - 1];
+        return result;
+    }
+
+    public static int getR(int[][] t, int i, int j) {
+        int result;
+        if (j < t[i - 1].length)
+            result = t[i - 1][j];
+        else
+            result = 0;
+        return result;
     }
 
 }
