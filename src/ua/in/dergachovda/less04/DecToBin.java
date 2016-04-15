@@ -1,5 +1,6 @@
 package ua.in.dergachovda.less04;
 //9. Перевести число в двоичную систему счисления
+
 import java.util.Scanner;
 
 public class DecToBin {
