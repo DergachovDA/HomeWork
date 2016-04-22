@@ -13,11 +13,6 @@ public class AlarmClock {
     private int minutesAlarm;
     private boolean switchAlarm;
 
-    public final static boolean ON = true;
-    public final static boolean Off = false;
-
-//    private int secondsAlarm;
-
     public AlarmClock() {
         name = "Default clock";
         Calendar calendar = Calendar.getInstance();
@@ -29,13 +24,6 @@ public class AlarmClock {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public void setHours(int hours) {
-//        if (hours > 23 || hours < 0)
-//            System.out.println("You entered the wrong hours for the " + name);
-//        else
-//            this.hours = hours;
-//    }
 
     public void setCurrentTime() {
         Calendar calendar = Calendar.getInstance();
@@ -61,7 +49,6 @@ public class AlarmClock {
     void setSwitchAlarm(boolean sw) {
         switchAlarm = sw;
         }
-    }
 
     public void fireAlarm() {
         System.out.println("Alarm!!! Wake up!!!");
@@ -74,7 +61,7 @@ public class AlarmClock {
     public void printCurrentTime() {
         System.out.println(hours + timeToString(minutes) + timeToString(seconds));
         if (switchAlarm)
-            System.out.println("Alm:" + hoursAlarm + timeToString(minutesAlarm));
+            System.out.println("Alm." + hoursAlarm + timeToString(minutesAlarm));
     }
 
     private String timeToString(int t) {

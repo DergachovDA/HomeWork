@@ -6,15 +6,28 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        AlarmClock clock = new AlarmClock();     // Создаём Будильник
+        AlarmClock clock = new AlarmClock();
         clock.setName("Alarm clock");
+
+        new Thread() {
+            public void run() {
+                while (true) {
+                    clock.setCurrentTime();
+                    if (clock.isAlarmTime())
+                        clock.fireAlarm();
+                    try {
+                        sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
+
         clock.printCurrentTime();
 
         while (true) {
             String operation = scanner.nextLine();
-            clock.setCurrentTime();
-            if (clock.isAlarmTime()) clock.fireAlarm();
             switch (operation) {
 
                 //Exit
@@ -56,6 +69,7 @@ public class Main {
                 //Error
                 default:
                     System.out.println("Unknown operation, try again");
+                    clock.printCurrentTime();
             }
         }
     }
