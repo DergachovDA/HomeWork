@@ -1,4 +1,5 @@
 package ua.in.dergachovda.less10.flashlight;
+
 /*
 + Создайте класс для и определите методы для предмета "Фонарь".
 + У него будет название,
@@ -12,7 +13,7 @@ package ua.in.dergachovda.less10.flashlight;
 (свойство int battery, которое будет хранить количество батареек для этого подойдет).
 Вы можете добавить возможности фонаря, как сочтете нужным.
  */
-public class Flashlight {
+class Flashlight {
 
     private String name;
     private int batteries;
@@ -25,29 +26,68 @@ public class Flashlight {
         batteryCompartment = 3;
         batteries = 1;
         state = 0;
-        light = new String[] {"off", "shines white", "shines red", "blinks"};
+        light = new String[]{"off", "shines white", "shines red", "blinks"};
     }
 
-    boolean checkState() {
+    private boolean checkState(int state) {
         return state <= batteries;
+    }
+
+    void setOff() {
+        state = 0;
+    }
+
+    void setSinesWhite() {
+        int state = 1;
+        if (checkState(state))
+            this.state = state;
+        else {
+            System.out.println("The flashlight can not shine white. Not enough batteries!");
+        }
+    }
+
+    void setSinesRed() {
+        int state = 2;
+        if (checkState(state))
+            this.state = state;
+        else {
+            System.out.println("The flashlight can not shine red. Not enough batteries!");
+        }
+    }
+
+    void setBlinks() {
+        int state = 3;
+        if (checkState(state))
+            this.state = state;
+        else {
+            System.out.println("The flashlight can not blinks. Not enough batteries!");
+        }
     }
 
     void setName(String name) {
         this.name = name;
     }
 
-    void setBattery() {
+    String getName() {
+        return name;
+    }
+
+    void insertBattery() {
         if (batteries + 1 > batteryCompartment)
             System.out.println("The battery compartment is full.");
         else
-            batteries ++;
+            batteries++;
     }
 
-    void getBattery() {
+    void removeBattery() {
         if (batteries - 1 < 0)
             System.out.println("The battery compartment is empty.");
         else
-            batteries --;
+            batteries--;
+    }
+
+    int getBatteries() {
+       return batteries;
     }
 
     void printStateFlashlight() {
